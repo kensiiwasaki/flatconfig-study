@@ -27,12 +27,19 @@ export default [
       },
     },
     rules: {
-      quotes: ["error", "single"],
+      quotes: ["error", "double"],
       // @typescript-eslint/eslint-pluginに付属のルールを適用
       ...tsEsLintPlugin.configs["eslint-recommended"].overrides[0].rules,
       ...tsEsLintPlugin.configs["recommended-type-checked"].rules,
       // 追加の設定
       "@typescript-eslint/no-explicit-any": "error",
+    },
+  },
+
+  {
+    files: ["**/*.tsx"],
+    rules: {
+      quotes: ["error", "single"],
     },
   },
 ];
